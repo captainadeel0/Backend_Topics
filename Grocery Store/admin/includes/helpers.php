@@ -9,7 +9,7 @@ function uploadImage($targetDir = "", $file, $size = 1)
 
     $data = ['errors' => false, 'result' => null];
 
-    $max_size = $size * 1024 * 1024;
+    $max_size = $size * 10024 * 10024;
     $types = ['image/jpg', 'image/png', 'image/jpeg'];
 
     if ($file['error'] === 0) {
