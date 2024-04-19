@@ -52,7 +52,9 @@
                     <?php  
                     
                     require_once("./db-con.php");
-                    $get_products = "SELECT * FROM products LEFT JOIN categories ON products.id = categories.id";
+                    $get_products = "SELECT products.*, categories.category FROM products
+                    LEFT JOIN categories 
+                    ON products.category_id = categories.id";
                     $result = mysqli_query($con , $get_products);
 
                     if(mysqli_num_rows($result) > 0){
