@@ -1,3 +1,45 @@
+<?php
+    require_once "./includes/db_conn.php";
+
+    if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['submit'] == "login") {
+
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+       // verify inputs are correct ?
+
+       if($email == "" || $password == ""){
+        die("all fields are required");
+       }
+
+        // verify user is exist ?
+        $sel_sql = "SELECT * FROM users WHERE email='$email' ";
+        $exists = mysqli_query($con, $sel_sql);
+
+        if(mysqli_num_rows($exists) === 0 ) {
+            die("invalid credentials");
+        }
+
+        // if user exists then verify its password is correct ?
+        $user = mysqli_fetch_assoc($exists);
+
+        if($password === $user['password']) {
+            die("invalid credentials");
+        }
+
+        session_start();
+
+        $_SESSION['login'] = true;
+        $_SESSION['user_id'] = $user['id'];
+
+        header("Location:index.php");
+
+    }
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -40,16 +82,16 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="index.html"> <h4>Login</h4></a>
+                                <a class="text-center" href=""> <h4>Login</h4></a>
         
-                                <form action="index.php" class="mt-5 mb-5 login-input">
+                                <form class="mt-5 mb-5 login-input" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" requird>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" class="form-control" placeholder="Password" name="password" required>
                                     </div>
-                                    <button class="btn login-form__btn submit w-100">Login</button>
+                                    <button class="btn login-form__btn submit w-100" name="submit" value="login">login</button>
                                 </form>
                             </div>
                         </div>
@@ -65,8 +107,3 @@
     <?php require_once("./includes/javascript-links.php")  ?>
 </body>
 </html>
-
-
-
-
-
