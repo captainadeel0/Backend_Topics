@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,11 +31,11 @@
             <hr>
 
             <div class="d-flex justify-content-end">
-                <a href="./products.php" class="btn btn-success text-white"><i class="fa fa-eye"></i> View Proudcts</a>
+                <a href="products.php" class="btn btn-success text-white"><i class="fa fa-eye"></i> View Proudcts</a>
             </div>
 
             <div class="form-container">
-                <form action="./insert-product-query.php" method="POST" enctype="multipart/form-data" class="row">
+                <form action="./product_query.php" method="POST" enctype="multipart/form-data" class="row">
 
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="name">Name <span class="text-danger">*</span>

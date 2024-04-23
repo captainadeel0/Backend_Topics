@@ -31,7 +31,7 @@
             <hr>
 
             <div class="d-flex justify-content-end">
-                <a href="./add-products.php" class="btn btn-success text-white"><i class="fa fa-plus"></i> Add Proudcts</a>
+                <a href="./add-product.php" class="btn btn-success text-white"><i class="fa fa-plus"></i> Add Proudcts</a>
             </div>
 
             <div class="table-responsive">
@@ -41,6 +41,8 @@
                             <th>Name</th>
                             <th>Unit Price</th>
                             <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Description</th>
                             <th>Image</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -52,9 +54,7 @@
                     <?php  
                     
                     require_once("./db-con.php");
-                    $get_products = "SELECT products.*, categories.category FROM products
-                    LEFT JOIN categories 
-                    ON products.category_id = categories.id";
+                    $get_products = "SELECT  products.*,categories.category FROM products LEFT JOIN categories ON products.category_id = categories.id";
                     $result = mysqli_query($con , $get_products);
 
                     if(mysqli_num_rows($result) > 0){
@@ -67,7 +67,10 @@
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['unit_price'] ?></td>
                             <td><?php echo $row['category'] ?></td>
-                            <td> <img src="./image/products/<?php  echo $row['image'] ?>" height="50px" alt=""></td>
+                            <td><?php echo $row['quantity'] ?></td>
+                            <td><?php echo $row['description'] ?></td>
+                            <td><img src="./image/Product/<?php echo $row['image'] ?>" height="50px" alt=""></td>
+                            
                             <td><span class="badge bg-success text-white px-2"><?php echo $row['status'] ?></span></td>
                             <td>
                                 <div class="dropdown">

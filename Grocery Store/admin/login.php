@@ -1,5 +1,6 @@
+
 <?php
-    require_once "./includes/db_conn.php";
+    require_once "./db-con.php";
 
     if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['submit'] == "login") {
 
@@ -23,7 +24,7 @@
         // if user exists then verify its password is correct ?
         $user = mysqli_fetch_assoc($exists);
 
-        if($password === $user['password']) {
+        if($password !== $user['password']) {
             die("invalid credentials");
         }
 
@@ -32,7 +33,7 @@
         $_SESSION['login'] = true;
         $_SESSION['user_id'] = $user['id'];
 
-        header("Location:index.php");
+        header("Location:profile.php");
 
     }
 
