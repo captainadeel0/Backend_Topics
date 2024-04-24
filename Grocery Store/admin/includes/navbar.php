@@ -217,6 +217,14 @@
                 </div>
             </div>
         </div>
+        <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="add-user.php"><i class="fa-solid fa-user text-primary"></i>  Add User</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)"><i class="fa-solid fa-user-group text-primary"></i> View User</a></li>
+                    </ol>
+                </div>
+            </div>
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
