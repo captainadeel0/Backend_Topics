@@ -14,7 +14,7 @@
 
 
 <!-- view categories container -->
-<div class="mt-3 bg-white shadow p-4">
+<div class="mt-5 offset-2 col-lg-8 bg-white shadow p-4">
 <div class="offset-4 col-lg-4 mb-2">
                 <label for=""></label>
 
@@ -52,36 +52,15 @@
 
             
 
-            <div class="col-lg-6 mb-2">
-                <label class="form-label" for="image">Image <span class="text-danger">*</span>
-                </label>
-                <input type="file" class="form-control" id="image" name="image" placeholder="Enter here..." required>
-            </div>
-
-            <div class="col-lg-6 mb-2">
-                <label class="form-label" for="image">Mobile.No <span class="text-danger">*</span>
-                </label>
-                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter here..." required>
-            </div>
-
-
-            <div class="col-lg-6 mb-2">
-                <label class="form-label" for="address">Address <span class="text-danger">*</span>
-                </label>
-               <input type="text" class="form-control" name="address" id="address" placeholder="Enter here..." required>
-            </div>
-
-            <div class="col-lg-12 mb-2">
-                <label class="form-label" for="address">Description <span class="text-danger">*</span>
-                </label>
-               <input type="text" class="form-control" name="description" id="description" placeholder="Enter here..." required>
-            </div>
-
             <div class="offset-4 col-lg-4 mb-2">
                 <label for=""></label>
 
                 <button class="btn btn-info text-white btn-lg mt-2 w-100">Signup</button>
             </div>
+            <div class="offset-4 col-lg-4 mb-2">
+        <p>Not registered?<a href="./signup-form.php">Signup</a></p>        
+        </div>
+
 
         </form>
     </div>

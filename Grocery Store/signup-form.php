@@ -8,7 +8,7 @@
     <?php require_once("./includes/css-links.php") ?>
 </head>
 <body>
-<div class="container  p-5">
+<div class="container  p-3">
 
 
 
@@ -82,6 +82,10 @@
 
                 <button class="btn btn-info text-white btn-lg mt-2 w-100">Signup</button>
             </div>
+            <div class="offset-4 col-lg-4 mb-2">
+        <p>Already have an account! <a href="./signin-form.php"> Login Now</a></p>        
+        </div>
+
 
         </form>
     </div>
