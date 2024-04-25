@@ -1,47 +1,4 @@
 
-<?php
-    require_once "./db-con.php";
-
-    if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['submit'] == "login") {
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-       // verify inputs are correct ?
-
-       if($email == "" || $password == ""){
-        die("all fields are required");
-       }
-
-        // verify user is exist ?
-        $sel_sql = "SELECT * FROM users WHERE email='$email' ";
-        $exists = mysqli_query($con, $sel_sql);
-
-        if(mysqli_num_rows($exists) === 0 ) {
-            die("invalid credentials");
-        }
-
-        // if user exists then verify its password is correct ?
-        $user = mysqli_fetch_assoc($exists);
-
-        if($password !== $user['password']) {
-            die("invalid credentials");
-        }
-
-        session_start();
-
-        $_SESSION['login'] = true;
-        $_SESSION['user_id'] = $user['id'];
-
-        header("Location:profile.php");
-
-    }
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -81,11 +38,37 @@
             <div class="row justify-content-center h-100">
                 <div class="col-xl-6">
                     <div class="form-input-content">
+
+
+                    <?php
+                    
+                session_start();
+                  
+                    if (!empty($_SESSION['error'])) {
+                        $msg = $_SESSION['error'];
+                        echo " <div class='alert alert-danger alert-dismissible fade show credErr'>
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span>
+                        </button> <strong>Warning! </strong> $msg</div>";
+                    }
+                    unset($_SESSION['error']);
+
+
+                    if (!empty($_SESSION['invalid'])) {
+                        $msg = $_SESSION['invalid'];
+                        echo " <div class='alert alert-danger alert-dismissible fade show credErr'>
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span>
+                        </button> <strong>Warning! </strong> $msg</div>";
+                    }
+                    unset($_SESSION['invalid']);
+
+                
+                    
+                    ?>
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
                                 <a class="text-center" href=""> <h4>Login</h4></a>
         
-                                <form class="mt-5 mb-5 login-input" action="<?php echo $_SERVER['PHP_SELF']  ?>" method="POST">
+                                <form class="mt-5 mb-5 login-input" action="login-query.php" method="POST">
                                     <div class="form-group">
                                         <input type="email" class="form-control" placeholder="Email" name="email" requird>
                                     </div>

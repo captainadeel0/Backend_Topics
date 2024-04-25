@@ -42,7 +42,6 @@
                             <th>Unit Price</th>
                             <th>Category</th>
                             <th>Quantity</th>
-                            <th>Description</th>
                             <th>Image</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -68,7 +67,6 @@
                             <td><?php echo $row['unit_price'] ?></td>
                             <td><?php echo $row['category'] ?></td>
                             <td><?php echo $row['quantity'] ?></td>
-                            <td><?php echo $row['description'] ?></td>
                             <td><img src="./image/Product/<?php echo $row['image'] ?>" height="50px" alt=""></td>
                             
                             <td><span class="badge bg-success text-white px-2"><?php echo $row['status'] ?></span></td>
@@ -76,9 +74,9 @@
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-success text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Link 1</a>
-                                        <a class="dropdown-item" href="#">Link 2</a>
-                                        <a class="dropdown-item" href="#">Link 3</a>
+                                        <a class="dropdown-item" href="#"></a>
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
                                     </div>
                                 </div>
                             </td>
