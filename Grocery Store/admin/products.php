@@ -74,8 +74,7 @@
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-success text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"></a>
-                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="edit-product.php">Edit</a>
                                         <a class="dropdown-item" href="#">Delete</a>
                                     </div>
                                 </div>

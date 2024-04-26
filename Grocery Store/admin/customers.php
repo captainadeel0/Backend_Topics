@@ -36,7 +36,7 @@
                 <table class="table table-striped table-bordered zero-configuration">
                     <thead>
                         <tr>
-                        <th>Image</th>
+                        
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>Mobile.No</th>
@@ -61,7 +61,6 @@
                     ?>
 
                         <tr>
-                        <td><img src="./image/users/<?php echo $row['image'] ?>" height="50px" alt=""></td>
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['mobile'] ?></td>
@@ -72,9 +71,10 @@
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-info text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Link 1</a>
-                                        <a class="dropdown-item" href="#">Link 2</a>
-                                        <a class="dropdown-item" href="#">Link 3</a>
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <a class="dropdown-item" href="#">Active</a>
+                                        <a class="dropdown-item" href="#">Inactive</a>
                                     </div>
                                 </div>
                             </td>

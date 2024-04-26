@@ -33,6 +33,11 @@
                         <i class="fa-solid fa-cart-shopping text-primary"></i> <span class="nav-text"> Orders</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="customers.php" aria-expanded="false">
+                        <i class="fa-solid fa-user-group text-primary"></i> <span class="nav-text"> Customers</span>
+                        </a>
+                    </li>
                    
 
                 </ul>
