@@ -67,7 +67,7 @@
                             <td><?php echo $row['unit_price'] ?></td>
                             <td><?php echo $row['category'] ?></td>
                             <td><?php echo $row['quantity'] ?></td>
-                            <td><img src="./image/Product/<?php echo $row['image'] ?>" height="50px" alt=""></td>
+                            <td><img src="./images/Product/<?php echo $row['image'] ?>" height="50px" alt=""></td>
                             
                             <td><span class="badge bg-info text-white px-2"><?php echo $row['status'] ?></span></td>
                             <td>

@@ -13,13 +13,12 @@ if ($row= mysqli_fetch_assoc($result)) {
         $id = $row['id'];
         $name = $row['name'];
         $unit_price = $row['unit_price'];
-        $category = $row['category'];
+        $category = $row['category_id'];
         $quantity = $row['quantity'];
         $image = $row['image'];
-        $status = $row['status'];
+        $description = $row['description'];
 }
-}
-
+   } 
 ?>
 
 
@@ -52,18 +51,25 @@ if ($row= mysqli_fetch_assoc($result)) {
 
         <!-- view categories container -->
         <div class="container mt-3 bg-white p-4">
-            <h3> <i class="fa fa-plus text-success"></i> Edit Products</h3>
+<div class="row">
+    <div class="col-md-6">            
+        <h3> <i class="fa fa-plus text-success"></i> Edit Products</h3>
+</div>
+<div class="col-md-6">
+    <img src="./images/Product/<?= $image ?>" height='50px' alt="">
+</div>
+</div>            
             <hr>
 
             <div class="form-container">
-                <form action="./products.php" method="POST" enctype="multipart/form-data" class="row">
+                <form action="" method="POST" enctype="multipart/form-data" class="row">
 
                 <input type="hidden" value="<?= $row['id'] ?>" name="id">
 
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="name">Name <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="name" value="<?= $row['name'] ?>" name="name" placeholder="Enter here..." required>
+                        <input type="text" class="form-control" id="name" value="<?= $name ?>" name="name" placeholder="Enter here..." required>
                     </div>
 
 
@@ -80,19 +86,23 @@ if ($row= mysqli_fetch_assoc($result)) {
                         </label>
                         <select class="form-control" name="category" value="<?= $row['category'] ?>" id="category">
                         <option value="-1">Choose here</option>
-                            <!-- fetch category from category table -->
+                          
                             <?php
-                            require_once "./db-con.php";
 
-                            $select = "SELECT * FROM categories";
-                            $result = mysqli_query($con, $select);
+                            $select_cat = "SELECT * FROM categories";
+                            $result2 = mysqli_query($con, $select_cat);
 
-                            if (mysqli_num_rows($result) > 0) {
+                            if (mysqli_num_rows($result2) > 0) {
 
-                                while ($row = mysqli_fetch_assoc($result)) {
+                                while ($row2 = mysqli_fetch_assoc($result2)) {
+                                    if($row2['id'] == $category ){
+                                        $selected = "selected";
+                                    }else{
+                                        $selected = "";
+                                    }
                             ?>
 
-                            <option value="<?php echo $row['id'] ?>"> <?php echo $row['category'] ?>  </option>
+                            <option <?= $selected ?> value="<?php echo $row2['id'] ?>"> <?php echo $row2['category'] ?>  </option>
 
                             <?php  } } ?>
                         </select>
@@ -103,7 +113,7 @@ if ($row= mysqli_fetch_assoc($result)) {
                     <div class="col-lg-6 ">
                         <label class="form-label" for="quantity">Quantity <span class="text-danger">*</span>
                         </label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" value="<?= $row['quantity'] ?>" placeholder="Enter here..." required>
+                        <input type="number" class="form-control" id="quantity" name="quantity" value="<?= $quantity ?>" placeholder="Enter here..." required>
                     </div>
 
 
@@ -116,7 +126,7 @@ if ($row= mysqli_fetch_assoc($result)) {
                     <div class="col-lg-12 mb-2">
                         <label class="form-label" for="val-username">Description <span class="text-danger">*</span>
                         </label>
-                        <textarea name="description" class="form-control" id="" rows="5"></textarea>
+                        <textarea name="description" class="form-control" id="" rows="5"><?= $description ?></textarea>
                     </div>
 
                     <div class="offset-8 col-lg-4 mb-2">

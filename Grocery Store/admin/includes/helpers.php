@@ -2,7 +2,7 @@
 
 
 
-function uploadImage($targetDir = "", $file, $size = 1)
+function uploadImage($targetDir = "", $file, $size = 2)
 {
     $targetDir = "images/$targetDir/";
     $newName   = time() . $file['name'];

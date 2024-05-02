@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-container">
-                <form action="./product_query.php" method="POST" enctype="multipart/form-data" class="row">
+                <form action="./insert-product-query.php" method="POST" enctype="multipart/form-data" class="row">
 
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="name">Name <span class="text-danger">*</span>

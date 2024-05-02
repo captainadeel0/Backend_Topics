@@ -18,8 +18,5 @@ if ($row= mysqli_fetch_assoc($result)) {
         $image = $row['image'];
         $status = $row['status'];
 }
-    // echo "<pre>"; print_r($result); echo "</pre>";
-} else {
-    header( "Location:edit-product.php" ) ;
-}
+   } 
 ?>
