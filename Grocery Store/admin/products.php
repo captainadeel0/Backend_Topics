@@ -27,11 +27,11 @@
 
         <!-- view categories container -->
         <div class="container mt-3 bg-white p-4">
-            <h3> <i class="fa fa-eye text-success"></i> View Products</h3>
+            <h3> <i class="fa fa-eye text-info"></i> View Products</h3>
             <hr>
 
             <div class="d-flex justify-content-end">
-                <a href="./add-product.php" class="btn btn-success text-white"><i class="fa fa-plus"></i> Add Proudcts</a>
+                <a href="./add-product.php" class="btn btn-info text-white"><i class="fa fa-plus"></i> Add Proudcts</a>
             </div>
 
             <div class="table-responsive">
@@ -69,13 +69,13 @@
                             <td><?php echo $row['quantity'] ?></td>
                             <td><img src="./image/Product/<?php echo $row['image'] ?>" height="50px" alt=""></td>
                             
-                            <td><span class="badge bg-success text-white px-2"><?php echo $row['status'] ?></span></td>
+                            <td><span class="badge bg-info text-white px-2"><?php echo $row['status'] ?></span></td>
                             <td>
                                 <div class="dropdown">
-                                    <button type="button" class="btn btn-success text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
+                                    <button type="button" class="btn btn-info text-white dropdown-toggle" data-toggle="dropdown">Actions</button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="edit-product.php">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <a class="dropdown-item" href="edit-product.php?id=<?= $row['id'] ?>">Edit</a>
+                                        <a class="dropdown-item" href="delete-product.php?id=<?= $row['id'] ?>">Delete</a>
                                     </div>
                                 </div>
                             </td>

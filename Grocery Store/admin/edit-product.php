@@ -1,4 +1,26 @@
 
+<?php
+ require_once("./db-con.php");
+
+$id = $_GET['id'];
+if(!empty($id)){
+
+    
+$sql = "SELECT * FROM products WHERE id = $id";
+$result = mysqli_query($con , $sql);
+
+if ($row= mysqli_fetch_assoc($result)) {
+        $id = $row['id'];
+        $name = $row['name'];
+        $unit_price = $row['unit_price'];
+        $category = $row['category'];
+        $quantity = $row['quantity'];
+        $image = $row['image'];
+        $status = $row['status'];
+}
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -34,19 +56,21 @@
             <hr>
 
             <div class="form-container">
-                <form action="./edit-product-query.php" method="POST" enctype="multipart/form-data" class="row">
+                <form action="./products.php" method="POST" enctype="multipart/form-data" class="row">
+
+                <input type="hidden" value="<?= $row['id'] ?>" name="id">
 
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="name">Name <span class="text-danger">*</span>
                         </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter here..." required>
+                        <input type="text" class="form-control" id="name" value="<?= $row['name'] ?>" name="name" placeholder="Enter here..." required>
                     </div>
 
 
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="unit_price">Unit Price <span class="text-danger">*</span>
                         </label>
-                        <input type="number" class="form-control" id="unit_price" name="unit_price" placeholder="Enter here..." required>
+                        <input type="number" class="form-control" id="unit_price" name="unit_price" value="<?= $row['unit_price'] ?>" placeholder="Enter here..." required>
                     </div>
 
 
@@ -54,7 +78,7 @@
                     <div class="col-lg-4 mb-2">
                         <label class="form-label" for="category">Category <span class="text-danger">*</span>
                         </label>
-                        <select class="form-control" name="category" id="category">
+                        <select class="form-control" name="category" value="<?= $row['category'] ?>" id="category">
                         <option value="-1">Choose here</option>
                             <!-- fetch category from category table -->
                             <?php
@@ -79,7 +103,7 @@
                     <div class="col-lg-6 ">
                         <label class="form-label" for="quantity">Quantity <span class="text-danger">*</span>
                         </label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter here..." required>
+                        <input type="number" class="form-control" id="quantity" name="quantity" value="<?= $row['quantity'] ?>" placeholder="Enter here..." required>
                     </div>
 
 
@@ -98,7 +122,7 @@
                     <div class="offset-8 col-lg-4 mb-2">
                         <label for=""></label>
 
-                        <button class="btn btn-success text-white btn-lg mt-2 w-100"> <i class="fa fa-plus"></i>Edit Product</button>
+                        <button class="btn btn-info text-white btn-lg mt-2 w-100"> Edit Product</button>
                     </div>
 
                 </form>

@@ -137,8 +137,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="dropdown">
                                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Actions</button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <a class="dropdown-item" href="edit-category.php?id=<?= $row['id'] ?>">Edit</a>
+                                                <a class="dropdown-item" href="delete-category.php?id=<?= $row['id'] ?>">Delete</a>
                                              
                                             </div>
                                         </div>

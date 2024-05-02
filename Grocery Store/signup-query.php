@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 echo "<div class='alert alert-danger mt-2 uploadingErr'>Query Failed</div>";
             }
         }
-        else{
+        else{ 
             
           echo  "<div class='alert alert-danger mt-2 uploadingErr'> $data[result]</div>";
 
