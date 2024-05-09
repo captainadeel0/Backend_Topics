@@ -28,10 +28,42 @@
         <!-- view categories container -->
         <div class="container mt-3 bg-white p-4">
             <h3> <i class="fa fa-plus text-success"></i> Add Products</h3>
+
             <hr>
 
+            <div class="col-8">
+            <?php
+
+if (!empty($_SESSION['success'])) {
+    $msg = $_SESSION['success'];
+    echo " <div class='alert alert-success alert-dismissible fade show credErr'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span>
+        </button> <strong>Congratulation! </strong> $msg</div>";
+}
+unset($_SESSION['success']);
+
+
+if (!empty($_SESSION['error'])) {
+    $msg = $_SESSION['error'];
+    echo " <div class='alert alert-danger alert-dismissible fade show credErr'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span>
+        </button> <strong>Warning! </strong> $msg</div>";
+}
+unset($_SESSION['error']);
+
+if (!empty($_SESSION['imgErr'])) {
+    $msg = $_SESSION['imgErr'];
+    echo " <div class='alert alert-danger alert-dismissible fade show credErr'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span>
+        </button> <strong>Warning! </strong> $msg</div>";
+}
+unset($_SESSION['imgErr']);
+
+?>
+            </div>
+
             <div class="d-flex justify-content-end">
-                <a href="products.php" class="btn btn-success text-white"><i class="fa fa-eye"></i> View Proudcts</a>
+                <a href="products.php" class="btn btn-info text-white"><i class="fa fa-eye"></i> View Proudcts</a>
             </div>
 
             <div class="form-container">
@@ -99,7 +131,7 @@
                     <div class="offset-8 col-lg-4 mb-2">
                         <label for=""></label>
 
-                        <button class="btn btn-success text-white btn-lg mt-2 w-100"> <i class="fa fa-plus"></i> Add Product</button>
+                        <button class="btn btn-info text-white btn-lg mt-2 w-100"> <i class="fa fa-plus"></i> Add Product</button>
                     </div>
 
                 </form>
