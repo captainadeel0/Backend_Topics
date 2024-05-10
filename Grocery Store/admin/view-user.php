@@ -63,7 +63,7 @@
                     ?>
 
                         <tr>
-                        <td><img src="./image/users/<?php echo $row['image'] ?>" height="50px" alt=""></td>
+                        <td><img src="./images/users/<?php echo $row['image'] ?>" height="50px" alt=""></td>
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['mobile'] ?></td>

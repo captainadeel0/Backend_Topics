@@ -18,11 +18,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // save info into db
             $name = $data['result'];
 
-            // echo $name;
+            echo $name;
             // exit;
+            
 
             $query = "INSERT INTO `users`(`name`, `email`, `password`, `image`, `mobile`, `address`, `description`) 
-            VALUES ('$_POST[name]','$_POST[email]' ,'$_POST[password]','$_POST[image]',$_POST[mobile],'$_POST[address]', '$_POST[description]') ";
+            VALUES ('$_POST[name]','$_POST[email]' ,'$_POST[password]','$name',$_POST[mobile],'$_POST[address]', '$_POST[description]') ";
     
             if (mysqli_query($con, $query)) {
                 header("Location:view-user.php");
