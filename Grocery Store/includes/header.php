@@ -40,6 +40,7 @@
                         <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                         <li><a href="./checkout.html">Check Out</a></li>
                         <li><a href="./blog-details.html">Blog Details</a></li>
+                        
                     </ul>
                 </li>
                 <li><a href="./blog.html">Blog</a></li>
@@ -83,15 +84,10 @@
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
-                            <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
+                            <div class="header__top__right__auth">
+                                <a href="my-orders.php"><i class="fa fa-user"></i>My Orders</a>
                             </div>
+ &nbsp;
                             <div class="header__top__right__auth">
                                 <a href="signup-form.php"><i class="fa fa-user"></i> Login</a>
                             </div>
